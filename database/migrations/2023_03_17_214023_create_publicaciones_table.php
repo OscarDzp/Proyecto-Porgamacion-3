@@ -16,6 +16,8 @@ return new class extends Migration
             $table->text('descripcion') ;
             $table->string('titulo',69) ;
             $table->longblob('imagen');
+            $table->longblob('imagen');
+
             $table->timestamps();
         });
     }
