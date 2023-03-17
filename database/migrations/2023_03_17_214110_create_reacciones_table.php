@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reacciones', function (Blueprint $table) {
-            $table->idReaccion();
+            $table->id();
+            $table->integer('idReaccion');
             $table->string('reaccion',15) ;
-            $table->longblob('icono') ;
+            $table->string('icono') ;
             $table->timestamps();
         });
     }
