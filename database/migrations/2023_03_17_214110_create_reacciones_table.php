@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('idReaccion');
             $table->string('reaccion',15) ;
-            $table->string('icono') ;
+            $table->string('icono')->nullable() ;
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('idUsuario');
             $table->text('descripcion') ;
             $table->string('titulo',69) ;
-            $table->string('imagen');
+            $table->string('imagen')->nullable();
             $table->timestamps();
         });
     }

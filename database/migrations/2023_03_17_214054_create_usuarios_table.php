@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('correo', 50 );
             $table->date('fecha');
             $table->string('puesto', 80 );
-            $table->string('imagen' );
+            $table->string('imagen' )->nullable();
             $table->text('biografia');
             $table->timestamps();
         });
