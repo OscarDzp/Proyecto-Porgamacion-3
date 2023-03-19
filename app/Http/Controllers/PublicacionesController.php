@@ -13,7 +13,8 @@ class PublicacionesController extends Controller
      */
     public function index()
     {
-        //
+        $publicaciones = Publicaciones::get();
+        return view('publicaciones.index', ['publicaciones' => $publicaciones]);
     }
 
     /**

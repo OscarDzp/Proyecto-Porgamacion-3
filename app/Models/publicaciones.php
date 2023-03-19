@@ -10,6 +10,6 @@ class publicaciones extends Model
     use HasFactory;
 
 
-    protected $fillable =['idUsuario','nombre','apellido','cedula','genero','telefono','correo','fecha','puesto','imagen','biografia'];
+    protected $fillable =['idPublicacion','idUsuario','titulo','descripcion','imagen'];
 
 }
