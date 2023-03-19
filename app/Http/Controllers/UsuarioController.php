@@ -13,7 +13,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return view('usuarios.index');
+        $usuarios = Usuario::get();
+        return view('usuarios.index', ['usuarios' => $usuarios]);
     }
 
     /**
@@ -21,7 +22,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('usuarios.create');
     }
 
     /**
@@ -29,7 +30,24 @@ class UsuarioController extends Controller
      */
     public function store(StoreusuarioRequest $request)
     {
-        //
+//        aqui se hacen las validaciones del formulario usuarios, preguntar si estas validaciones afectan sql
+
+        $fields = $request->validate([
+            'idUsuario' => 'required|numeric',
+            'nombre' => 'required|string|max:50',
+            'apellido' => 'required|string|max:50',
+            'imagen' => 'nullable|image',
+            'puesto' => 'required|string|max:80',
+            'correo' => 'required|string|max:50',
+            'telefono' => 'required|numeric',
+            'genero' => 'required|string|max:10',
+            'fecha' => 'date|required',
+            'cedula' => 'required|numeric',
+            'biografia' => 'required|string'
+        ]);
+
+        Usuario :: create($fields);
+        return redirect()->route('usuarios.create')->with('success', 'Usuario'. $fields['nombre']. "ha sido creado exitosamente");
     }
 
     /**
@@ -37,7 +55,8 @@ class UsuarioController extends Controller
      */
     public function show(usuario $usuario)
     {
-        //
+
+        return view('usuarios.show', ['usuario' => $usuario]);
     }
 
     /**
@@ -61,6 +80,7 @@ class UsuarioController extends Controller
      */
     public function destroy(usuario $usuario)
     {
-        //
+        $usuario->delete();
+        return redirect()->route('usuarios.index');
     }
 }

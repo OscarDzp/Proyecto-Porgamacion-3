@@ -15,3 +15,9 @@ use App\Http\Controllers\UsuarioController;
 */
 
 Route::get('/',[UsuarioController::class, 'index'])->name('usuarios.index');
+Route::get('/crear',[UsuarioController::class, 'create'])->name('usuarios.create');
+Route::post('/',[UsuarioController::class, 'store'])->name('usuarios.store');
+Route::get('/{usuario}',[UsuarioController::class, 'show'])->name('usuarios.show');
+Route::get('/{usuario}/editar',[UsuarioController::class, 'edit'])->name('usuarios.edit');
+Route::patch('/{usuario}',[UsuarioController::class, 'update'])->name('usuarios.update');
+Route::delete('/{usuario}',[UsuarioController::class, 'destroy'])->name('usuarios.destroy');
