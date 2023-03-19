@@ -30,8 +30,6 @@
                             <div class="col-12 col-sm-12">
                                 <a href="{{route('usuarios.show', $usuario)}}" class="tarjeta">
                                     <h2>{{$usuario->nombre}}</h2>
-
-                                    <div>hola</div>
                                 </a>
                                 <br>
                             </div>
