@@ -27,8 +27,8 @@ use App\Http\Controllers\ReaccionesController;
 Route::get('/',[PublicacionesController::class, 'index'])->name('publicacion.index');
 Route::get('/crear',[PublicacionesController::class, 'create'])->name('publicacion.create');
 Route::post('/',[PublicacionesController::class, 'store'])->name('publicacion.store');
-Route::get('/{publicacion}',[PublicacionesController::class, 'show'])->name('publicacion.show');
-Route::get('/{publicacion}/editar',[PublicacionesController::class, 'edit'])->name('publicacion.edit');
-Route::patch('/{publicacion}',[PublicacionesController::class, 'update'])->name('publicacion.update');
-Route::delete('/{publicacion}',[PublicacionesController::class, 'destroy'])->name('publicacion.destroy');
+Route::get('/{publicaciones}',[PublicacionesController::class, 'show'])->name('publicacion.show');
+Route::get('/{publicaciones}/editar',[PublicacionesController::class, 'edit'])->name('publicacion.edit');
+Route::patch('/{publicaciones}',[PublicacionesController::class, 'update'])->name('publicacion.update');
+Route::delete('/{publicaciones}',[PublicacionesController::class, 'destroy'])->name('publicacion.destroy');
 
