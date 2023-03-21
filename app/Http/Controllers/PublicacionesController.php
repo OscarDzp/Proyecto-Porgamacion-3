@@ -14,7 +14,7 @@ class PublicacionesController extends Controller
     public function index()
     {
         $publicaciones = Publicaciones::get();
-        return view('publicaciones.index', ['publicaciones' => $publicaciones]);
+        return view('publicacion.index', ['publicacion' => $publicaciones]);
     }
 
     /**
@@ -22,7 +22,7 @@ class PublicacionesController extends Controller
      */
     public function create()
     {
-        //
+        return view('publicacion.create');
     }
 
     /**
@@ -30,7 +30,16 @@ class PublicacionesController extends Controller
      */
     public function store(StorepublicacionesRequest $request)
     {
-        //
+        $fields = $request->validate([
+            'idPublicacion' => 'required|numeric',
+            'idUsuario'=> 'required|numeric',
+            'descripcion'=> 'required|string',
+            'titulo'=>'required|string|max:69',
+            'imagen'=>'nullable|image'
+        ]);
+
+        Publicaciones ::create($fields);
+        return redirect()->route('publicacion.create')->with('success','La Publicacion'.$fields['titulo'].'Ha sido creado exitosamente');
     }
 
     /**
@@ -38,7 +47,7 @@ class PublicacionesController extends Controller
      */
     public function show(publicaciones $publicaciones)
     {
-        //
+        return view('publicacion.show' , ['publicaciones' => $publicaciones]);
     }
 
     /**
@@ -60,8 +69,9 @@ class PublicacionesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(publicaciones $publicaciones)
+    public function destroy(Publicaciones $publicaciones)
     {
-        //
+       $publicaciones->delete();
+      return redirect()->route('publicacion.index');
     }
 }

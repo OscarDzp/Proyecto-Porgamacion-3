@@ -11,12 +11,8 @@
         <div class="row-titulo">
             <div class="col">
                 <h1>Crear Usuario</h1>
-
             </div>
         </div>
-
-
-
         <form class="row" action="{{route('usuarios.store')}}" method="POST">
             @csrf
             <div class="col col-12 mt-3">
@@ -82,7 +78,6 @@
             </div>
 
         </form>
-
         @if(session()->has('success'))
             <div class="alter alter-primary alter-dismissible mt-4 fade show" role="alert">
                 {{session()->get('success')}}
@@ -100,10 +95,5 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
-
-
 @endsection
