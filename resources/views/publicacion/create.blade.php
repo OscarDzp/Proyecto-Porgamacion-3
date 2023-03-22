@@ -17,7 +17,7 @@
             @csrf
             <div class="col col-12 mt-3">
                 <label for="idPublicacion">ID Publicacion</label>
-                <input type="text" name="idUsuario" class="form-control" required>
+                <input type="text" name="idPublicacion" class="form-control" required>
             </div>
 
             <div class="col col-12 mt-3">

@@ -38,7 +38,7 @@ class PublicacionesController extends Controller
             'imagen'=>'nullable|image'
         ]);
 
-        Publicaciones ::create($fields);
+        Publicaciones::create($fields);
         return redirect()->route('publicacion.create')->with('success','La Publicacion'.$fields['titulo'].'Ha sido creado exitosamente');
     }
 

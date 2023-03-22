@@ -15,6 +15,16 @@
             </div>
         </div>
 
+
+    <div class="row contenido">
+        <h2>ID: {{$publicaciones->id}}</h2>
+        <h2>ID Publicacion: {{$publicaciones->idPublicacion}}</h2>
+        <h2>ID Usuario: {{$publicaciones->idUsuario}}</h2>
+        <h2>Descripcion: {{$publicaciones->descripcion}}</h2>
+        <h2>Titulo: {{$publicaciones->titulo}}</h2>
+        <h2>Imagen: {{$publicaciones->imagen}}</h2>
+    </div>
+
         <div class="row-acciones">
             <div class="col-auto">
                 <div class="boton">
@@ -30,15 +40,5 @@
             </div>
         </div>
 
-
-
-    <div class="row contenido">
-        <h2>ID: {{$publicaciones->id}}</h2>
-        <h2>ID Publicacion: {{$publicaciones->idPublicacion}}</h2>
-        <h2>ID Usuario: {{$publicaciones->idUsuario}}</h2>
-        <h2>Descripcion: {{$publicaciones->descripcion}}</h2>
-        <h2>Titulo: {{$publicaciones->titulo}}</h2>
-        <h2>Imagen: {{$publicaciones->imagen}}</h2>
-    </div>
 </div>
 @endsection
