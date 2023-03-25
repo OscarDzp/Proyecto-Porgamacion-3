@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
+use App\Models\Reaccion;
 use App\Models\User;
-use App\Models\reacciones;
 use Illuminate\Auth\Access\Response;
 
-class ReaccionesPolicy
+class ReaccionPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class ReaccionesPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, reacciones $reacciones): bool
+    public function view(User $user, Reaccion $reaccion): bool
     {
         //
     }
@@ -35,7 +35,7 @@ class ReaccionesPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, reacciones $reacciones): bool
+    public function update(User $user, Reaccion $reaccion): bool
     {
         //
     }
@@ -43,7 +43,7 @@ class ReaccionesPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, reacciones $reacciones): bool
+    public function delete(User $user, Reaccion $reaccion): bool
     {
         //
     }
@@ -51,7 +51,7 @@ class ReaccionesPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, reacciones $reacciones): bool
+    public function restore(User $user, Reaccion $reaccion): bool
     {
         //
     }
@@ -59,7 +59,7 @@ class ReaccionesPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, reacciones $reacciones): bool
+    public function forceDelete(User $user, Reaccion $reaccion): bool
     {
         //
     }

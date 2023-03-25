@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('apellido', 50 );
             $table->integer('cedula',);
             $table->string('genero', 10 );
-            $table->integer('telefono');
-            $table->string('correo', 50 );
+            $table->string('telefono');
+            $table->string('correo', 50 ) -> unique();
             $table->date('fecha');
             $table->string('puesto', 80 );
             $table->string('imagen' )->nullable();

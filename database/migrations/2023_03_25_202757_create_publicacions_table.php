@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reacciones', function (Blueprint $table) {
+        Schema::create('publicaciones', function (Blueprint $table) {
             $table->id();
-            $table->integer('idReaccion');
-            $table->string('reaccion',15) ;
-            $table->string('icono')->nullable() ;
+            $table->string('tiutlo');
+            $table->string('descripcion');
+            $table->string('imagen')-> nullable();
+            $table->foreignId('idUsuario')->references('id')->on("usuarios");
+            $table->foreignId('idReaccion')->references('id')->on("reaccions");
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reacciones');
+        Schema::dropIfExists('publicacions');
     }
 };

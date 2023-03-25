@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\reacciones;
-use App\Http\Requests\StorereaccionesRequest;
-use App\Http\Requests\UpdatereaccionesRequest;
+use App\Models\Publicacion;
+use App\Http\Requests\StorePublicacionRequest;
+use App\Http\Requests\UpdatePublicacionRequest;
 
-class ReaccionesController extends Controller
+class PublicacionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class ReaccionesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorereaccionesRequest $request)
+    public function store(StorePublicacionRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class ReaccionesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(reacciones $reacciones)
+    public function show(Publicacion $publicacion)
     {
         //
     }
@@ -43,7 +43,7 @@ class ReaccionesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(reacciones $reacciones)
+    public function edit(Publicacion $publicacion)
     {
         //
     }
@@ -51,7 +51,7 @@ class ReaccionesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatereaccionesRequest $request, reacciones $reacciones)
+    public function update(UpdatePublicacionRequest $request, Publicacion $publicacion)
     {
         //
     }
@@ -59,7 +59,7 @@ class ReaccionesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(reacciones $reacciones)
+    public function destroy(Publicacion $publicacion)
     {
         //
     }
