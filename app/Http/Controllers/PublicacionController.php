@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Publicacion;
 use App\Http\Requests\StorePublicacionRequest;
 use App\Http\Requests\UpdatePublicacionRequest;
-use App\Models\usuario;
 
 class PublicacionController extends Controller
 {
@@ -14,7 +13,8 @@ class PublicacionController extends Controller
      */
     public function index()
     {
-        return Publicacion::get();
+        //
+        return publicacion::get();
     }
 
     /**

@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Publicacion extends Model
 {
     use HasFactory;
-    protected $fillable=['titulo','descripcion','imagen'];
 
-    public function usuarios(){
+    protected $fillable = ['titulo', 'descripcion', 'imagen'];
+
+    public function publicaciones()
+    {
         return $this->belongsTo("App\Models\usuario", "idUsuario");
     }
 }
