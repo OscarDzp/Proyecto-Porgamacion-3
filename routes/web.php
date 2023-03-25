@@ -34,5 +34,6 @@ use App\Http\Controllers\ReaccionController;
 
 Route:: resource("usuarios", UsuarioController::class);
 Route:: resource("publicaciones", PublicacionController::class);
+Route:: resource("reacciones", ReaccionController::class);
 
 

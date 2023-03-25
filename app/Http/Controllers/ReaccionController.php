@@ -13,7 +13,7 @@ class ReaccionController extends Controller
      */
     public function index()
     {
-        //
+        return reaccion::get();
     }
 
     /**

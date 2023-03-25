@@ -11,7 +11,7 @@ class Publicacion extends Model
 
     protected $fillable = ['titulo', 'descripcion', 'imagen'];
 
-    public function publicaciones()
+    public function usuarios()
     {
         return $this->belongsTo("App\Models\usuario", "idUsuario");
     }
