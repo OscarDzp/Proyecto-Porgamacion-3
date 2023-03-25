@@ -13,8 +13,9 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuario::get();
-        return view('usuarios.index', ['usuarios' => $usuarios]);
+//        $usuarios = Usuario::get();
+//        return view('usuarios.index', ['usuarios' => $usuarios]);
+        return usuario::get();
     }
 
     /**
