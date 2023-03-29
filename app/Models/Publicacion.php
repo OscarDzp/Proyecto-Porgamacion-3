@@ -9,7 +9,7 @@ class Publicacion extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titulo', 'descripcion', 'imagen'];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 
     public function usuarios()
     {

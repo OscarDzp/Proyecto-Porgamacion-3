@@ -9,7 +9,7 @@ class usuario extends Model
 {
     use HasFactory;
 
-    protected $fillable=['idUsuario','nombre','apellido','imagen','puesto','correo','telefono','genero','fecha','cedula','biografia'];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 
     public function publicaciones(){
         return $this->hasMany("App\Models\Publicacion", "idUsuario");

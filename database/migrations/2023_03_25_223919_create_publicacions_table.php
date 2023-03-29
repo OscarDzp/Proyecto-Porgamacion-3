@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('descripcion');
             $table->string('imagen')-> nullable();
             $table->foreignId('idU')->references('id')->on("usuarios");
-            $table->foreignId('idR')->references('id')->on("reacciones");
+            $table->foreignId('idR')->references('id')->on("reaccions");
             $table->timestamps();
         });
     }
