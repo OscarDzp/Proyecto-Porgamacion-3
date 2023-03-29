@@ -13,8 +13,9 @@ class PublicacionController extends Controller
      */
     public function index()
     {
-        //
-        return publicacion::get();
+        $publicaciones = Publicacion::get();
+        return view('publicaciones.index', ['publicaciones' => $publicaciones]);
+
     }
 
     /**
@@ -22,7 +23,7 @@ class PublicacionController extends Controller
      */
     public function create()
     {
-        //
+        return view ( 'publicaciones.create', ['publicacion'=> new Publicacion()]);
     }
 
     /**
@@ -30,7 +31,16 @@ class PublicacionController extends Controller
      */
     public function store(StorePublicacionRequest $request)
     {
-        //
+
+     $fields =  $request->validate([
+         'titulo' => 'required|string',
+         'descripcion' => 'required|string',
+          'imagen' =>'nullable|image',
+         'idR'=>'required|string',
+         'idU'=>'required|string',
+     ]);
+        Publicacion :: create($fields);
+        return redirect()->route('publicaciones.create')->with('success', 'Publicacion'. $fields['titulo']. "ha sido creado exitosamenete");
     }
 
     /**
@@ -38,7 +48,7 @@ class PublicacionController extends Controller
      */
     public function show(Publicacion $publicacion)
     {
-        //
+        return view ('publicaciones.show', ['publicacion'=> $publicacion]);
     }
 
     /**
@@ -46,7 +56,7 @@ class PublicacionController extends Controller
      */
     public function edit(Publicacion $publicacion)
     {
-        //
+        return view ('publicaciones.edit', ['publicacion'=> $publicacion]);
     }
 
     /**
@@ -54,7 +64,16 @@ class PublicacionController extends Controller
      */
     public function update(UpdatePublicacionRequest $request, Publicacion $publicacion)
     {
-        //
+        $fields =  $request->validate([
+            'titulo' => 'required|string',
+            'descripcion' => 'required|string',
+            'imagen' =>'nullable|image',
+            'idR'=>'required|string',
+            'idU'=>'required|string',
+        ]);
+        $publicacion->update($fields);
+        return redirect()->route('publicaciones.edit',$publicacion)->with('success', ' La Publicacion'. $fields['titulo']. "ha sido creado exitosamenete");
+
     }
 
     /**
@@ -62,6 +81,7 @@ class PublicacionController extends Controller
      */
     public function destroy(Publicacion $publicacion)
     {
-        //
+        $publicacion->delete();
+        return redirect()->route('publicaciones.index');
     }
 }

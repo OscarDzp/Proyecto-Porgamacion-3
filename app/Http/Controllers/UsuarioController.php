@@ -13,9 +13,9 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-//        $usuarios = Usuario::get();
-//        return view('usuarios.index', ['usuarios' => $usuarios]);
-        return usuario::with("publicaciones")->get();
+        $usuarios = Usuario::get();
+        return view('usuarios.index', ['usuarios' => $usuarios]);
+//        return usuario::with("publicaciones")->get();
     }
 
     /**
@@ -23,7 +23,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        return view('usuarios.create');
+        return view('usuarios.create', ['usuario'=> new Usuario()]);
     }
 
     /**
@@ -65,7 +65,7 @@ class UsuarioController extends Controller
      */
     public function edit(usuario $usuario)
     {
-        //
+        return view('usuarios.edit', ['usuario'=>$usuario]);
     }
 
     /**
@@ -73,7 +73,22 @@ class UsuarioController extends Controller
      */
     public function update(UpdateusuarioRequest $request, usuario $usuario)
     {
-        //
+        $fields = $request->validate([
+            'idUsuario' => 'required|numeric',
+            'nombre' => 'required|string|max:50',
+            'apellido' => 'required|string|max:50',
+            'imagen' => 'nullable|image',
+            'puesto' => 'required|string|max:80',
+            'correo' => 'required|string|max:50',
+            'telefono' => 'required|numeric',
+            'genero' => 'required|string|max:10',
+            'fecha' => 'date|required',
+            'cedula' => 'required|numeric',
+            'biografia' => 'required|string'
+        ]);
+
+        $usuario->update($fields);
+        return redirect()->route('usuarios.edit', $usuario)->with('success', 'El Usuario'. $fields['nombre']. "ha sido Editado exitosamente");
     }
 
     /**

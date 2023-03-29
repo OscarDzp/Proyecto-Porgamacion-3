@@ -13,7 +13,10 @@ class ReaccionController extends Controller
      */
     public function index()
     {
-        return reaccion::get();
+        $reacciones = Reaccion::get();
+        return view('reacciones.index',['reacciones' => $reacciones]);
+
+//        return reaccion::get();
     }
 
     /**
@@ -21,7 +24,7 @@ class ReaccionController extends Controller
      */
     public function create()
     {
-        //
+        return view ( 'reacciones.create', ['reaccion'=> new Reaccion()]);
     }
 
     /**
@@ -29,7 +32,13 @@ class ReaccionController extends Controller
      */
     public function store(StoreReaccionRequest $request)
     {
-        //
+        $fields = $request->validate([
+            'nombre' => 'required|string',
+            'icono' =>'nullable|image'
+        ]);
+
+        Reaccion ::create($fields);
+        return redirect()->route('reacciones.create')->with('success', 'Reaccion'. $fields['nombre']. "ha sido creado exitosamenete");
     }
 
     /**
@@ -37,7 +46,7 @@ class ReaccionController extends Controller
      */
     public function show(Reaccion $reaccion)
     {
-        //
+        return view ('reacciones.show', ['reaccion'=>$reaccion]);
     }
 
     /**
@@ -45,7 +54,7 @@ class ReaccionController extends Controller
      */
     public function edit(Reaccion $reaccion)
     {
-        //
+        return view ('reacciones.edit', ['reaccion'=>$reaccion]);
     }
 
     /**
@@ -53,7 +62,13 @@ class ReaccionController extends Controller
      */
     public function update(UpdateReaccionRequest $request, Reaccion $reaccion)
     {
-        //
+        $fields = $request->validate([
+            'nombre' => 'required|string',
+            'icono' =>'nullable|image'
+        ]);
+        $reaccion->update($fields);
+        return redirect()->route('reacciones.edit', $reaccion)->with('success', 'Reaccion'. $fields['nombre']. "ha sido creado exitosamenete");
+
     }
 
     /**
@@ -61,6 +76,7 @@ class ReaccionController extends Controller
      */
     public function destroy(Reaccion $reaccion)
     {
-        //
+        $reaccion->delete();
+        return redirect()->route('reacciones.index');
     }
 }
