@@ -1,3 +1,4 @@
+//Estilo Basico para todo
 .tarjetas{
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +26,6 @@
 }
 
 //Estilo para el index de publicaciones
-// Estilo básico para las publicaciones
 .publicacion {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -33,21 +33,15 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
     overflow: hidden;
-
-    // Estilos para cuando se hace hover en la publicación
     &:hover {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         transform: translateY(-3px);
     }
-
-    // Estilos para la imagen de la publicación
     .publicacion-imagen {
         height: 200px;
         background-position: center;
         background-size: cover;
     }
-
-    // Estilos para el contenido de la publicación
     .publicacion-contenido {
         padding: 20px;
 
@@ -55,21 +49,17 @@
             color: #333;
             font-size: 24px;
             margin-bottom: 10px;
-
         }
-
         .publicacion-descripcion {
             color: #777;
             font-size: 16px;
             line-height: 1.5;
             margin-bottom: 20px;
         }
-
         .publicacion-fecha {
             color: #999;
             font-size: 14px;
         }
-
         .publicacion-autor {
             color: #999;
             font-size: 14px;
@@ -90,5 +80,131 @@
     overflow: hidden;
 }
 
+
+// Estilo Index para usuarios
+.usuario {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow: hidden;
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transform: translateY(-3px);
+    }
+
+    .usuario-imagen {
+        height: 200px;
+        background-position: center;
+        background-size: cover;
+    }
+    .usuario-contenido {
+        padding: 20px;
+        .usuario-titulo {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+
+        }
+        .usuario-descripcion {
+            color: #777;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .usuario-fecha {
+            color: #999;
+            font-size: 14px;
+        }
+        .usuario-autor {
+            color: #999;
+            font-size: 14px;
+        }
+    }
+}
+@font-face {
+    font-family: 'MiFuente';
+    src: url('/ruta/a/mi/fuente.ttf');
+}
+.usuario {
+    font-family: 'MiFuente', sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+
+// scss para show de global
+.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .row-titulo {
+        margin-bottom: 2rem;
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+    .contenido {
+        margin-bottom: 2rem;
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        img {
+            max-width: 100%;
+        }
+        .row-botones {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+    .row-acciones {
+        margin-top: 2rem;
+
+        .boton {
+            margin-right: 1rem;
+        }
+
+        input[type='submit'] {
+            padding: 0.5rem 1rem;
+        }
+
+        button,
+        input[type='submit'] {
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+    }
+}
 
 

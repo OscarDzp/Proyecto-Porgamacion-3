@@ -24,13 +24,13 @@ use App\Http\Controllers\ReaccionController;
 //Route::patch('/{usuario}',[UsuarioController::class, 'update'])->name('usuarios.update');
 //Route::delete('/{usuario}',[UsuarioController::class, 'destroy'])->name('usuarios.destroy');
 
-Route::get('/',[PublicacionController::class, 'index'])->name('publicaciones.index');
-Route::get('/crear',[PublicacionController::class, 'create'])->name('publicaciones.create');
-Route::post('/',[PublicacionController::class, 'store'])->name('publicaciones.store');
-Route::get('/{publicacion}',[PublicacionController::class, 'show'])->name('publicaciones.show');
-Route::get('/{publicacion}/editar',[PublicacionController::class, 'edit'])->name('publicaciones.edit');
-Route::patch('/{publicacion}',[PublicacionController::class, 'update'])->name('publicaciones.update');
-Route::delete('/{publicacion}',[PublicacionController::class, 'destroy'])->name('publicaciones.destroy');
+//Route::get('/',[PublicacionController::class, 'index'])->name('publicaciones.index');
+//Route::get('/crear',[PublicacionController::class, 'create'])->name('publicaciones.create');
+//Route::post('/',[PublicacionController::class, 'store'])->name('publicaciones.store');
+//Route::get('/{publicacion}',[PublicacionController::class, 'show'])->name('publicaciones.show');
+//Route::get('/{publicacion}/editar',[PublicacionController::class, 'edit'])->name('publicaciones.edit');
+//Route::patch('/{publicacion}',[PublicacionController::class, 'update'])->name('publicaciones.update');
+//Route::delete('/{publicacion}',[PublicacionController::class, 'destroy'])->name('publicaciones.destroy');
 
 //Route::get('/',[ReaccionController::class, 'index'])->name('reacciones.index');
 //Route::get('/crear',[ReaccionController::class, 'create'])->name('reacciones.create');
@@ -41,8 +41,8 @@ Route::delete('/{publicacion}',[PublicacionController::class, 'destroy'])->name(
 //Route::delete('/{reaccion}',[ReaccionController::class, 'destroy'])->name('reacciones.destroy');
 
 
-//Route:: resource("usuarios", UsuarioController::class);
-//Route:: resource("publicaciones", PublicacionController::class);
-//Route:: resource("reacciones", ReaccionController::class);
-//
-//
+Route:: resource("usuarios", UsuarioController::class);
+Route:: resource("publicaciones", PublicacionController::class);
+Route:: resource("reacciones", ReaccionController::class);
+
+
