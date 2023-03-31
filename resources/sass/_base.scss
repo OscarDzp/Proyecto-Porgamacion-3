@@ -23,3 +23,72 @@
 
     }
 }
+
+//Estilo para el index de publicaciones
+// Estilo básico para las publicaciones
+.publicacion {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    // Estilos para cuando se hace hover en la publicación
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transform: translateY(-3px);
+    }
+
+    // Estilos para la imagen de la publicación
+    .publicacion-imagen {
+        height: 200px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    // Estilos para el contenido de la publicación
+    .publicacion-contenido {
+        padding: 20px;
+
+        .publicacion-titulo {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+
+        }
+
+        .publicacion-descripcion {
+            color: #777;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .publicacion-fecha {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .publicacion-autor {
+            color: #999;
+            font-size: 14px;
+        }
+    }
+}
+@font-face {
+    font-family: 'MiFuente';
+    src: url('/ruta/a/mi/fuente.ttf');
+}
+.publicacion {
+    font-family: 'MiFuente', sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+
+
