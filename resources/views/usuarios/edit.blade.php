@@ -6,6 +6,7 @@
 
 
 @section('content')
+
     <div class="container">
         <div class="row titulo">
             <div class="col">
@@ -26,6 +27,7 @@
             @method('PATCH')
             @include('usuarios.form')
         </form>
+
         @if(session()->has('success'))
             <div class="alert alert-primary alert-dismissible mt-4 fade show" role="alert">
                 {{ session()->get('success')}}
@@ -33,4 +35,5 @@
             </div>
         @endif
     </div>
+
 @endsection

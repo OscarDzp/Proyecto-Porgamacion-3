@@ -44,7 +44,7 @@ class UsuarioController extends Controller
             'genero' => 'required|string|max:10',
             'fecha' => 'date|required',
             'cedula' => 'required|numeric',
-            'biografia' => 'required|string'
+            'biografia' => 'required|string',
         ]);
 
         Usuario :: create($fields);
@@ -84,11 +84,10 @@ class UsuarioController extends Controller
             'genero' => 'required|string|max:10',
             'fecha' => 'date|required',
             'cedula' => 'required|numeric',
-            'biografia' => 'required|string'
+            'biografia' => 'required|string',
         ]);
-
         $usuario->update($fields);
-        return redirect()->route('usuarios.edit', $usuario)->with('success', 'El Usuario'. $fields['nombre']. "ha sido Editado exitosamente");
+        return redirect()->route('usuarios.edit',$usuario)->with('success', 'El Usuario'. $fields['nombre']. "ha sido Editado exitosamente");
     }
 
     /**

@@ -40,9 +40,8 @@ use App\Http\Controllers\ReaccionController;
 //Route::patch('/{reaccion}',[ReaccionController::class, 'update'])->name('reacciones.update');
 //Route::delete('/{reaccion}',[ReaccionController::class, 'destroy'])->name('reacciones.destroy');
 
-
-Route:: resource("usuarios", UsuarioController::class);
-Route:: resource("publicaciones", PublicacionController::class);
-Route:: resource("reacciones", ReaccionController::class);
-
+//Route:: resource("usuarios", UsuarioController::class);
+//Route:: resource("publicaciones", PublicacionController::class);
+//Route:: resource("reacciones", ReaccionController::class);
+//
 
