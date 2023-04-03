@@ -19,7 +19,7 @@
             <div class="col-md-6">
             <h2>Titulo: {{$publicacion->titulo}}</h2>
             <h2>Descipcion: {{$publicacion->descripcion}}</h2>
-{{--            <h2>Imagen: {{$publicacion->imagen}}</h2>--}}
+            <h2>Imagen: {{$publicacion->imagen}}</h2>
             <h2>Id de reaccion: {{$publicacion->idR}}</h2>
             <h2>Id de Usuario: {{$publicacion->idU}}</h2>
 

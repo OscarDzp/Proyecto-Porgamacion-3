@@ -46,14 +46,17 @@
                     <a href="{{route('usuarios.show', $usuario)}}" class="usuario-link">
                         <div class="usuario-imagen" style="background-image: url('{{$usuario->imagen}}')"></div>
                                     <div class="usuario-contenido">
-                                    <h2 class="usuario-titulo">{{$usuario->nombre}}</h2>
-                                        <p class="usuario-descripcion">{{$usuario->apellido}}</p>
+                                    <h2 class="usuario-titulo">{{$usuario->nombre, $usuario->apellido}}</h2>
+                                        <h2 class="usuario-descripcion">{{$usuario->apellido}}</h2>
                                         <p class="usuario-descripcion">{{$usuario->genero}}</p>
                                     </div>
                                 </a>
                              <br>
                   </div>
             </div>
+
+
+
             @endforeach
         </div>
     </div>

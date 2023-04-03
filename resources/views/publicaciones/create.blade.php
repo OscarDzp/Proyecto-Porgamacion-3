@@ -16,12 +16,12 @@
         <form class="row" action="{{route('publicaciones.store')}}" method="POST">
     @csrf
             <div class="col col-12 mt-3">
-                <label for="titulo">Nombre</label>
+                <label for="titulo">Título</label>
                 <input type="text" name="titulo" class="form-control" required>
             </div>
 
             <div class="col col-12 mt-3">
-                <label for="descripcion">Apellido</label>
+                <label for="descripcion">Descripcion</label>
                 <input type="text" name="descripcion" class="form-control" required>
             </div>
 

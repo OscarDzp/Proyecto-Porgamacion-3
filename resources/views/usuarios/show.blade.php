@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row-titulo">
             <div class="col">
-                <h1>Vista Usuario</h1>
+                <h1>Administarcion de usuario</h1>
                 <br>
             </div>
         </div>
