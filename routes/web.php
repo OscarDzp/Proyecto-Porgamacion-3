@@ -16,6 +16,9 @@ use App\Http\Controllers\ReaccionController;
 |
 */
 
+Route::get('/', function () {return view('index');});
+
+
 Route::get('/usuarios',[UsuarioController::class, 'index'])->name('usuarios.index');
 Route::get('/usuarios/create',[UsuarioController::class, 'create'])->name('usuarios.create');
 Route::post('/usuarios/store',[UsuarioController::class, 'store'])->name('usuarios.store');
@@ -24,7 +27,7 @@ Route::get('/usuarios/{usuario}/editar',[UsuarioController::class, 'edit'])->nam
 Route::patch('/usuarios/{usuario}/update',[UsuarioController::class, 'update'])->name('usuarios.update');
 Route::delete('/usuarios/{usuario}/destroy',[UsuarioController::class, 'destroy'])->name('usuarios.destroy');
 
-Route::get('/',[PublicacionController::class, 'index'])->name('publicaciones.index');
+Route::get('/publicaciones',[PublicacionController::class, 'index'])->name('publicaciones.index');
 Route::get('/publicaciones/crear',[PublicacionController::class, 'create'])->name('publicaciones.create');
 Route::post('/publicaciones/store',[PublicacionController::class, 'store'])->name('publicaciones.store');
 Route::get('/publicaciones/{publicacion}',[PublicacionController::class, 'show'])->name('publicaciones.show');
@@ -40,9 +43,5 @@ Route::get('/reacciones/{reaccion}/editar',[ReaccionController::class, 'edit'])-
 Route::patch('/reacciones/{reaccion}/update',[ReaccionController::class, 'update'])->name('reacciones.update');
 Route::delete('/reacciones/{reaccion}/destroy',[ReaccionController::class, 'destroy'])->name('reacciones.destroy');
 
-//
-//Route:: resource("/usuarios", UsuarioController::class);
-//Route:: resource("/publicaciones", PublicacionController::class);
-//Route:: resource("/reacciones", ReaccionController::class);
 
 

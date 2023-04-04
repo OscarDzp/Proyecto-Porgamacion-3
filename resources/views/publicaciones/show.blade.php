@@ -34,8 +34,8 @@
                     <div class="boton mx-2">
                     <a href="{{route('publicaciones.index')}}" class="btn btn-dark">Regresar</a>
                 </div>
-
                 </div>
+
                     <div class="col-auto">
                         <div class="boton mx-2">
                     <a href="{{route('publicaciones.edit', $publicacion)}}" class="btn btn-primary">Editar</a>

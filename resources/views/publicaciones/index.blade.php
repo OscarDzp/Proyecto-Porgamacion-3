@@ -13,7 +13,6 @@
                 <br>
             </div>
         </div>
-
         <div class="row-acciones">
             <div class="col-auto">
                 <div class="boton">

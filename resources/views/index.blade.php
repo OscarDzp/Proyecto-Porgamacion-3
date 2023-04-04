@@ -1,3 +1,11 @@
+@extends('layout')
+
+
+@section('title', 'Index Principal')
+
+
+
+@section('content')
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,7 +16,30 @@
     <title>Document</title>
 </head>
 <body>
-<h1>hola</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="">Otaku Social</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('usuarios.index')}}">Usuarios <span class="sr-only"></span></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('publicaciones.index')}}">Publicaciones <span class="sr-only"></span></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('reacciones.index')}}">Reacciones <span class="sr-only"></span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
 </body>
 </html>
+@endsection
