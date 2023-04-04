@@ -35,10 +35,6 @@
     </div>
     <br>
 </div>
-
-
-
-
-
 </body>
 </html>
+@endsection

@@ -27,11 +27,17 @@
                 <div class="container">
                     <div class="row">
                         @foreach($reacciones as $reaccion)
-                            <div class="col-12 col-sm-12">
-                                <a href="{{route ('reacciones.show', $reaccion)}}" class="tarjeta">
-                                    <h2>{{$reaccion->nombre}}</h2>
-                                </a>
-                                <br>
+
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card h-100">
+                                    <a href="{{route ('reacciones.show', $reaccion)}}">
+                                        <img class="card-img-top" src="{{$reaccion->icono}}" alt="{{$reaccion->nombre}}">
+                                    </a>
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{$reaccion->nombre}}</h4>
+                                    </div>
+
+                                </div>
                             </div>
                         @endforeach
                     </div>
