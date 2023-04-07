@@ -17,13 +17,14 @@
 
             <div class="col col-12 mt-3">
                 <label for="nombre">Nombre reaccion</label>
-                <input type="text" name="nombre" class="form-control" required>
+                <input required value="{{old ('nombre', $reaccion->nombre) }}" type="text" name="nombre" class="form-control" >
             </div>
 
             <div class="col col-12 mt-3">
-                <label for="icono">Icono de la reaccion</label>
-                <input type="image" name="icono" class="form-control">
+                <label for="icono">icono</label>
+                <input required value="{{old ('icono', $reaccion->icono) }} "type="file" name="icono" class="form-control">
             </div>
+
             <div class="col col-12 mt-3 acciones">
                 <div class="boton">
                     <input type="submit" class="btn btn-secondary" value="Enviar">

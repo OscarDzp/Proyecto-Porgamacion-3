@@ -24,6 +24,7 @@ class ReaccionController extends Controller
      */
     public function create()
     {
+
         return view ( 'reacciones.create', ['reaccion'=> new Reaccion()]);
     }
 
@@ -34,8 +35,11 @@ class ReaccionController extends Controller
     {
         $fields = $request->validate([
             'nombre' => 'required|string',
-            'icono' =>'nullable|image'
+            'icono' =>'nullable|image',
         ]);
+
+        $icono = $request->file('icono') ->store('public/image');
+        $fields['icono']=$icono;
 
         Reaccion ::create($fields);
         return redirect()->route('reacciones.create')->with('success', 'Reaccion'. $fields['nombre']. "ha sido creado exitosamenete");
@@ -46,6 +50,7 @@ class ReaccionController extends Controller
      */
     public function show(Reaccion $reaccion)
     {
+//        $reaccion->icono = Storage::url($reaccion->icono);
         return view ('reacciones.show', ['reaccion'=>$reaccion]);
     }
 
@@ -64,10 +69,21 @@ class ReaccionController extends Controller
     {
         $fields = $request->validate([
             'nombre' => 'required|string',
-            'icono' =>'nullable|image'
+            'icono' =>'nullable|image',
         ]);
+
+        if($request->hasFile('imagen')) {
+            Storage::delete($reaccion->icono);
+            $icono = $request->file('icono')->store('public/images');
+            $fields['icono'] = $icono;
+        } else {
+            $fields['imagen'] = $reaccion->imagen;
+        }
+
+
+
         $reaccion->update($fields);
-        return redirect()->route('reacciones.edit', $reaccion)->with('success', 'Reaccion'. $fields['nombre']. "ha sido creado exitosamenete");
+        return redirect()->route('reacciones.edit', $reaccion)->with('success', 'Reaccion'. $fields['nombre'].  "ha sido creado exitosamenete");
 
     }
 

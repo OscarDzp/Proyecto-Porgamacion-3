@@ -22,18 +22,25 @@
             </div>
         </div>
 
-        <form class="row" action="{{route('usuarios.update',$usuario) }}" method="POST">
+        <form class="row" action="{{route('usuarios.update',$usuario) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             @include('usuarios.form')
-        </form>
 
+        @if($errors->any())
+            <ul class="list-disc">
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
         @if(session()->has('success'))
             <div class="alert alert-primary alert-dismissible mt-4 fade show" role="alert">
                 {{ session()->get('success')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
             </div>
         @endif
+        </form>
     </div>
 
 @endsection

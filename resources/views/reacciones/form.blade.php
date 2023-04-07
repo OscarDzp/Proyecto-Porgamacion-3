@@ -1,11 +1,11 @@
 <div class="col col-12 mt-3">
     <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" class="form-control" required>
+    <input  required value="{{old ('nombre', $reaccion->nombre) }}" type="text" name="nombre" class="form-control" >
 </div>
 
 <div class="col col-12 mt-3">
     <label for="icono">icono</label>
-    <input type="image" name="icono" class="form-control">
+    <input value="{{old ('icono', $reaccion->icono) }}" type="file" name="icono" class="form-control">
 </div>
 
 <div class="col col-12 mt-3 acciones">
