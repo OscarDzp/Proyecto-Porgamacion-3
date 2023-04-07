@@ -35,7 +35,7 @@ class PublicacionController extends Controller
      $fields =  $request->validate([
          'titulo' => 'required|string',
          'descripcion' => 'required|string',
-          'imagen' =>'nullable|image|mimes:jpeg,png,jpg',
+          'imagen' =>'nullable|string',
          'idR'=>'required|string',
          'idU'=>'required|string',
      ]);
