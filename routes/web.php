@@ -20,6 +20,10 @@ Route::get('/', function (){
     return view('index');
 });
 
+Route::get('/Principal', function (){
+    return view('principal.index');
+});
+
 
 Route::get('/usuarios',[UsuarioController::class, 'index'])->name('usuarios.index');
 Route::get('/usuarios/create',[UsuarioController::class, 'create'])->name('usuarios.create');

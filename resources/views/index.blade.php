@@ -48,8 +48,10 @@ use App\Http\Controllers\ReaccionController;
                 <a class="nav-link" href="{{route('reacciones.index')}}">Reacciones <span class="sr-only"></span></a>
             </li>
         </ul>
+
     </div>
 </nav>
+
 
 
 
