@@ -32,7 +32,7 @@
 
             <div class="col col-12 mt-3">
                 <label for="imagen">Foto de perfil</label>
-                <input type="text" name="imagen" class="form-control">
+                <input type="image" name="imagen" class="form-control">
             </div>
 
             <div class="col col-12 mt-3">
@@ -50,7 +50,7 @@
                 <input type="text" name="telefono" class="form-control" required>
             </div>
 
-            {{--Preguntar un un dropdown de generos --}}
+
             <div class="col col-12 mt-3">
                 <label for="genero">Género</label>
                 <input type="text" name="genero" class="form-control" required>

@@ -37,7 +37,7 @@ class UsuarioController extends Controller
             'idUsuario' => 'required|numeric',
             'nombre' => 'required|string|max:50',
             'apellido' => 'required|string|max:50',
-            'imagen' => 'nullable|string',
+            'imagen' => 'nullable|image',
             'puesto' => 'required|string|max:80',
             'correo' => 'required|string|max:50',
             'telefono' => 'required|numeric',

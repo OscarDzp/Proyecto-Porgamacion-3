@@ -23,7 +23,7 @@ class PublicacionController extends Controller
      */
     public function create()
     {
-        return view ( 'publicaciones.create', ['publicacion'=> new Publicacion()]);
+        return view ( 'publicacions.create', ['publicacion'=> new Publicacion()]);
     }
 
     /**

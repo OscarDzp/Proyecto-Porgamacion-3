@@ -16,7 +16,9 @@ use App\Http\Controllers\ReaccionController;
 |
 */
 
-Route::get('/', function () {return view('index');});
+Route::get('/', function (){
+    return view('index');
+});
 
 
 Route::get('/usuarios',[UsuarioController::class, 'index'])->name('usuarios.index');
@@ -42,6 +44,7 @@ Route::get('/reacciones/{reaccion}',[ReaccionController::class, 'show'])->name('
 Route::get('/reacciones/{reaccion}/editar',[ReaccionController::class, 'edit'])->name('reacciones.edit');
 Route::patch('/reacciones/{reaccion}/update',[ReaccionController::class, 'update'])->name('reacciones.update');
 Route::delete('/reacciones/{reaccion}/destroy',[ReaccionController::class, 'destroy'])->name('reacciones.destroy');
+
 
 
 

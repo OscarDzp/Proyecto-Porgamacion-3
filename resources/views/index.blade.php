@@ -1,4 +1,14 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\PublicacionController;
+use App\Http\Controllers\ReaccionController;
+
+?>
+
 @extends('layout')
+
 
 
 @section('title', 'Index Principal')
@@ -40,6 +50,9 @@
         </ul>
     </div>
 </nav>
+
+
+
 </body>
 </html>
 @endsection

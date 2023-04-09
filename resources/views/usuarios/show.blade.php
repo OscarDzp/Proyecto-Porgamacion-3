@@ -33,6 +33,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <div>
+                        <h2>Publicaciones</h2>
+{{--                        @foreach($usuario->publicaciones as $publicacion)--}}
+
+{{--                            <li>{{$publicacion -> titulo}}--}}
+{{--                                {{$publicacion -> descripcion}}--}}
+{{--                            </li>--}}
+{{--                        @endforeach--}}
+                    </div>
                 </div>
 
                 <div class="row mt-3">
