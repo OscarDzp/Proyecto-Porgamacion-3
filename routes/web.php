@@ -20,10 +20,8 @@ Route::get('/', function (){
     return view('index');
 });
 
-Route::get('/Principal', function (){
-    return view('principal.index');
-});
-
+Route::get('/', function (){return view('principal.index');});
+// se tienen que crear mas rutas y otro controlador para ususarios
 
 Route::get('/usuarios',[UsuarioController::class, 'index'])->name('usuarios.index');
 Route::get('/usuarios/create',[UsuarioController::class, 'create'])->name('usuarios.create');
