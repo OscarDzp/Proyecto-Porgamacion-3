@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Reaccion;
 use App\Http\Requests\StoreReaccionRequest;
 use App\Http\Requests\UpdateReaccionRequest;
+use Illuminate\Support\Facades\Storage;
+use Psy\Readline\Hoa\Console;
 
 class ReaccionController extends Controller
 {
@@ -36,13 +38,14 @@ class ReaccionController extends Controller
         $fields = $request->validate([
             'nombre' => 'required|string',
             'icono' =>'nullable|string',
+//            'icono' =>'image|mimes:jpeg,png,jpg,webp|max:1024',
         ]);
 
-//        $icono = $request->file('icono') ->store('public/image');
+//        $icono = $request->file('icono')->store('public/images');
 //        $fields['icono']=$icono;
 
-        Reaccion ::create($fields);
-        return redirect()->route('reacciones.create')->with('success', 'Reaccion'. $fields['nombre']. "ha sido creado exitosamenete");
+        Reaccion::create($fields);
+        return redirect()->route('reacciones.create')->with('success', 'La Reaccion' . $fields['nombre'] . 'ha sido creado exitosamenete');
     }
 
     /**
@@ -51,7 +54,7 @@ class ReaccionController extends Controller
     public function show(Reaccion $reaccion)
     {
 //        $reaccion->icono = Storage::url($reaccion->icono);
-        return view ('reacciones.show', ['reaccion'=>$reaccion]);
+        return view ('reacciones.show', ['reaccion' => $reaccion]);
     }
 
     /**
@@ -74,7 +77,7 @@ class ReaccionController extends Controller
 
 //        if($request->hasFile('imagen')) {
 //            Storage::delete($reaccion->icono);
-//            $icono = $request->file('icono')->store('public/images');
+//            $icono = $request->file('icono')->store('public/image');
 //            $fields['icono'] = $icono;
 //        } else {
 //            $fields['imagen'] = $reaccion->imagen;
