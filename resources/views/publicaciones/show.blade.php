@@ -19,8 +19,8 @@
                 <div class="card-body">
             <h2>Titulo: {{$publicacion->titulo}}</h2>
             <h2>Descipcion: {{$publicacion->descripcion}}</h2>
-            <h2>Id de reaccion: {{$publicacion->idR}}</h2>
-            <h2>Id de Usuario: {{$publicacion->idU}}</h2>
+            <h2>Id de reaccion: {{$publicacion->reacciones->nombre}}</h2>
+            <h2>Id de Usuario: {{$publicacion->usuarios->nombre}}</h2>
                 </div>
         </div>
 

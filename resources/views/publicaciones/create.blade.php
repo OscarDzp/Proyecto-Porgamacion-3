@@ -15,37 +15,8 @@
         </div>
         <form class="row" action="{{route('publicaciones.store')}}" method="POST">
     @csrf
-            <div class="col col-12 mt-3">
-                <label for="titulo">Título</label>
-                <input type="text" name="titulo" class="form-control" required>
-            </div>
-
-            <div class="col col-12 mt-3">
-                <label for="descripcion">Descripcion</label>
-                <input type="text" name="descripcion" class="form-control" required>
-            </div>
-
-            <div class="col col-12 mt-3">
-                <label for="imagen">Imagen</label>
-                <input type="text" name="imagen" class="form-control">
-            </div>
-            <div class="col col-12 mt-3">
-                <label for="idR">id reaccion</label>
-                <input type="text" name="idR" class="form-control" required>
-            </div>
-
-            <div class="col col-12 mt-3">
-                <label for="idU">id Usuario</label>
-                <input type="text" name="idU" class="form-control" required>
-            </div>
-
-
-            <div class="col col-12 mt-3 acciones">
-                <div class="boton">
-                    <input type="submit" class="btn btn-secondary" value="Enviar">
-                </div>
-            </div>
-
+      @include('publicaciones.form')
+        </form>
             @if(session()->has('success'))
                 <div class="alter alter-primary alter-dismissible mt-4 fade show" role="alert">
                     {{session()->get('success')}}

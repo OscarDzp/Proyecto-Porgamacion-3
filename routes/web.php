@@ -16,11 +16,8 @@ use App\Http\Controllers\ReaccionController;
 |
 */
 
-Route::get('/', function (){
-    return view('index');
-});
 
-Route::get('/', function (){return view('principal.index');});
+Route::get('/', function (){return view('principal.index');})->name('index');
 // se tienen que crear mas rutas y otro controlador para ususarios
 
 Route::get('/usuarios',[UsuarioController::class, 'index'])->name('usuarios.index');

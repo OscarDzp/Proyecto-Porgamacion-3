@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Publicacion;
 use App\Http\Requests\StorePublicacionRequest;
 use App\Http\Requests\UpdatePublicacionRequest;
+use App\Models\Reaccion;
+use App\Models\usuario;
 
 class PublicacionController extends Controller
 {
@@ -13,7 +15,7 @@ class PublicacionController extends Controller
      */
     public function index()
     {
-        $publicaciones = Publicacion::get();
+        $publicaciones = Publicacion::with("usuarios","Reacciones")->get();
         return view('publicaciones.index', ['publicaciones' => $publicaciones]);
 
     }
@@ -23,7 +25,9 @@ class PublicacionController extends Controller
      */
     public function create()
     {
-        return view ( 'publicaciones.create', ['publicacion'=> new Publicacion()]);
+        $usuarios = Usuario::get();
+        $reacciones = Reaccion::get();
+        return view ( 'publicaciones.create', ['publicacion'=> new Publicacion(),'usuarios'=>$usuarios,'reacciones'=>$reacciones]);
     }
 
     /**
@@ -39,7 +43,7 @@ class PublicacionController extends Controller
          'idR'=>'required|string',
          'idU'=>'required|string',
      ]);
-        Publicacion :: create($fields);
+        Publicacion::create($fields);
         return redirect()->route('publicaciones.create')->with('success', 'Publicacion '. $fields['titulo']. " ha sido creada exitosamenete");
     }
 
@@ -48,6 +52,8 @@ class PublicacionController extends Controller
      */
     public function show(Publicacion $publicacion)
     {
+        $usuarios = Usuario::get();
+        $reacciones = Reaccion::get();
         return view ('publicaciones.show', ['publicacion'=> $publicacion]);
     }
 
@@ -56,7 +62,9 @@ class PublicacionController extends Controller
      */
     public function edit(Publicacion $publicacion)
     {
-        return view ('publicaciones.edit', ['publicacion'=> $publicacion]);
+        $usuarios = Usuario::get();
+        $reacciones = Reaccion::get();
+        return view ('publicaciones.edit', ['publicacion'=>$publicacion,'usuarios'=>$usuarios,'reacciones'=>$reacciones]);
     }
 
     /**

@@ -11,7 +11,6 @@ class usuario extends Model
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
-    public function publicaciones(){
-        return $this->hasMany("App\Models\Publicacion", "idUsuario");
-    }
+    public function publicaciones() {return $this->hasMany("App\Models\Publicacion", "idU");}
+
 }

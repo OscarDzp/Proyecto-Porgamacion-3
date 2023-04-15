@@ -11,9 +11,6 @@ class Reaccion extends Model
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
-    public function reacciones()
-    {
-        return $this->belongsTo("App\Models\reaccion", "idReaccion");
-    }
+    public function publicaciones() {return $this->hasMany("App\Models\Publicacion", "idR");}
 
 }

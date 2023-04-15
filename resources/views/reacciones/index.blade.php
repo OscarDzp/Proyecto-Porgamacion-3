@@ -19,6 +19,9 @@
                 <div class="boton">
                     <a href="{{route('reacciones.create')}}" class="btn btn-success"> Crear</a>
                 </div>
+                <div class="mx-auto">
+                    <a href="{{route('index')}}" class="btn btn-danger">Index Principal</a>
+                </div>
             </div>
         </div>
 

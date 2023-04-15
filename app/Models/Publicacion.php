@@ -11,8 +11,10 @@ class Publicacion extends Model
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
-    public function usuarios()
-    {
-        return $this->belongsTo("App\Models\usuario", "idUsuario");
+    public function usuarios(){
+        return $this->belongsTo("App\Models\usuario", "idU");
+    }
+    public function reacciones(){
+        return $this->belongsTo("App\Models\Reaccion", "idR");
     }
 }

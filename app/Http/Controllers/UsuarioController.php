@@ -13,9 +13,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuarios = Usuario::get();
+        $usuarios = Usuario::with("publicaciones")->get();
         return view('usuarios.index', ['usuarios' => $usuarios]);
-//        return usuario::with("publicaciones")->get();
     }
 
     /**
