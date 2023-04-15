@@ -37,12 +37,12 @@ class ReaccionController extends Controller
     {
         $fields = $request->validate([
             'nombre' => 'required|string',
-            'icono' =>'nullable|string',
-//            'icono' =>'image|mimes:jpeg,png,jpg,webp|max:1024',
+//            'icono' =>'nullable|string',
+            'icono' =>'image|mimes:jpeg,png,jpg,webp|max:1024',
         ]);
 
-//        $icono = $request->file('icono')->store('public/images');
-//        $fields['icono']=$icono;
+        $icono = $request->file('icono')->store('public/images');
+        $fields['icono']=$icono;
 
         Reaccion::create($fields);
         return redirect()->route('reacciones.create')->with('success', 'La Reaccion' . $fields['nombre'] . 'ha sido creado exitosamenete');
@@ -53,7 +53,7 @@ class ReaccionController extends Controller
      */
     public function show(Reaccion $reaccion)
     {
-//        $reaccion->icono = Storage::url($reaccion->icono);
+        $reaccion->icono = Storage::url($reaccion->icono);
         return view ('reacciones.show', ['reaccion' => $reaccion]);
     }
 
