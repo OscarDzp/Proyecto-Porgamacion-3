@@ -17,7 +17,6 @@ class PublicacionController extends Controller
     {
         $publicaciones = Publicacion::with("usuarios","Reacciones")->get();
         return view('publicaciones.index', ['publicaciones' => $publicaciones]);
-
     }
 
     /**
@@ -35,7 +34,6 @@ class PublicacionController extends Controller
      */
     public function store(StorePublicacionRequest $request)
     {
-
      $fields =  $request->validate([
          'titulo' => 'required|string',
          'descripcion' => 'required|string',
@@ -75,13 +73,12 @@ class PublicacionController extends Controller
         $fields =  $request->validate([
             'titulo' => 'required|string',
             'descripcion' => 'required|string',
-            'imagen' =>'nullable|image',
+            'imagen' =>'nullable|string',
             'idR'=>'required|string',
             'idU'=>'required|string',
         ]);
         $publicacion->update($fields);
         return redirect()->route('publicaciones.edit',$publicacion)->with('success', 'La Publicacion '. $fields['titulo']. " ha sido creado exitosamenete");
-
     }
 
     /**

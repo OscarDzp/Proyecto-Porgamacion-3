@@ -72,7 +72,7 @@ class ReaccionController extends Controller
     {
         $fields = $request->validate([
             'nombre' => 'required|string',
-            'icono' =>'nullable|image',
+            'icono' =>'nullable|string',
         ]);
 
 //        if($request->hasFile('imagen')) {

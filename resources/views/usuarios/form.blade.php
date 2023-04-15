@@ -15,7 +15,7 @@
 
 <div class="col col-12 mt-3">
     <label for="imagen">Foto de perfil</label>
-    <input  required value="{{ old('imagen', $usuario->imagen) }}" type="image" name="imagen" class="form-control">
+    <input  required value="{{ old('imagen', $usuario->imagen) }}" type="text" name="imagen" class="form-control">
 </div>
 
 <div class="col col-12 mt-3">

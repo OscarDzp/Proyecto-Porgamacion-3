@@ -32,7 +32,7 @@
 
             <div class="col col-12 mt-3">
                 <label for="imagen">Foto de perfil</label>
-                <input type="image" name="imagen" class="form-control">
+                <input type="text" name="imagen" class="form-control">
             </div>
 
             <div class="col col-12 mt-3">

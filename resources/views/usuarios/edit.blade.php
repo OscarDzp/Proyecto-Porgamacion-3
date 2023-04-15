@@ -13,7 +13,6 @@
                 <h1>Editar Usuario</h1>
             </div>
         </div>
-
         <div class="row acciones">
             <div class="col-auto">
                 <div class="boton">
@@ -21,19 +20,10 @@
                 </div>
             </div>
         </div>
-
         <form class="row" action="{{route('usuarios.update',$usuario) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             @include('usuarios.form')
-
-        @if($errors->any())
-            <ul class="list-disc">
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        @endif
         @if(session()->has('success'))
             <div class="alert alert-primary alert-dismissible mt-4 fade show" role="alert">
                 {{ session()->get('success')}}
