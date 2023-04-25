@@ -10,18 +10,9 @@
     <div class="container">
         <div class="row titulo">
             <div class="col">
-                <h1>Editar Publiacion</h1>
+                <h1>Editar Publicación</h1>
             </div>
         </div>
-
-        <div class="row acciones">
-            <div class="col-auto">
-                <div class="boton">
-                    <a href="{{ route('publicaciones.show', $publicacion) }}" class="btn btn-primary">Regresar</a>
-                </div>
-            </div>
-        </div>
-
         <form class="row" action="{{route('publicaciones.update',$publicacion)}}" method="POST">
             @csrf
             @method('PATCH')

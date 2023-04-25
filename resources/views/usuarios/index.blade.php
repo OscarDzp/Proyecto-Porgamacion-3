@@ -13,35 +13,15 @@
                 <br>
             </div>
         </div>
-
         <div class="row-acciones">
             <div class="col-auto">
                 <div class="boton">
                     <a href="{{route('usuarios.create')}}" class="btn btn-success"> Crear</a>
-                </div>
-                <div class="mx-auto">
-                    <a href="{{route('index')}}" class="btn btn-danger">Index Principal</a>
+                    <a href="{{route('index')}}" class="btn btn-danger">Regresar</a>
                 </div>
             </div>
         </div>
-
-{{--        <div class="row">--}}
-{{--            <div class="col tarjetas">--}}
-{{--                <div class="container">--}}
-{{--                    <div class="row">--}}
-{{--                        @foreach($usuarios as $usuario)--}}
-{{--                            <div class="col-12 col-sm-12">--}}
-{{--                                <a href="{{route('usuarios.show', $usuario)}}" class="tarjeta">--}}
-{{--                                    <h2>{{$usuario->nombre}}</h2>--}}
-{{--                                </a>--}}
-{{--                                <br>--}}
-{{--                            </div>--}}
-{{--                        @endforeach--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
+<div><br></div>
         <div class="row">
             @foreach($usuarios as $usuario)
             <div class="col-md-6 col-lg-4">
@@ -54,12 +34,9 @@
                                         <p class="usuario-descripcion">{{$usuario->genero}}</p>
                                     </div>
                                 </a>
-                             <br>
+                        <br>
                   </div>
             </div>
-
-
-
             @endforeach
         </div>
     </div>

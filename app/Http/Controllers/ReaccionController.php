@@ -45,7 +45,7 @@ class ReaccionController extends Controller
 //        $fields['icono']=$icono;
 
         Reaccion::create($fields);
-        return redirect()->route('reacciones.create')->with('success', 'La Reaccion' . $fields['nombre'] . 'ha sido creado exitosamenete');
+        return redirect()->route('reacciones.create')->with('success', 'La Reaccion ' . $fields['nombre'] . ' ha sido creado exitosamenete');
     }
 
     /**
@@ -86,7 +86,7 @@ class ReaccionController extends Controller
 
 
         $reaccion->update($fields);
-        return redirect()->route('reacciones.edit', $reaccion)->with('success', 'Reaccion'. $fields['nombre'].  "ha sido creado exitosamenete");
+        return redirect()->route('reacciones.edit', $reaccion)->with('success', 'La Reaccion '. $fields['nombre'].  " ha sido Actualizada exitosamente");
 
     }
 

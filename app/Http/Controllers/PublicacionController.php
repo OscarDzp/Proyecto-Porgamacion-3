@@ -8,6 +8,7 @@ use App\Http\Requests\UpdatePublicacionRequest;
 use App\Models\Reaccion;
 use App\Models\usuario;
 
+
 class PublicacionController extends Controller
 {
     /**
@@ -42,7 +43,7 @@ class PublicacionController extends Controller
          'idU'=>'required|string',
      ]);
         Publicacion::create($fields);
-        return redirect()->route('publicaciones.create')->with('success', 'Publicacion '. $fields['titulo']. " ha sido creada exitosamenete");
+        return redirect()->route('publicaciones.create')->with('success', 'La Publicacion '. $fields['titulo']. " ha sido creada exitosamenete");
     }
 
     /**
@@ -78,7 +79,7 @@ class PublicacionController extends Controller
             'idU'=>'required|string',
         ]);
         $publicacion->update($fields);
-        return redirect()->route('publicaciones.edit',$publicacion)->with('success', 'La Publicacion '. $fields['titulo']. " ha sido creado exitosamenete");
+        return redirect()->route('publicaciones.edit',$publicacion)->with('success', 'La Publicacion '. $fields['titulo']. " ha sido Actualizada exitosamenete");
     }
 
     /**

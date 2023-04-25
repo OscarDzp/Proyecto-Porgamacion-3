@@ -1,36 +1,31 @@
 @extends('layout')
 
 
-@section('title', 'Reaccion')
-
+@section('title', 'Reacción')
 
 
 @section('content')
     <div class="container">
         <div class="row-titulo">
             <div class="col">
-                <h1>Reaccion</h1>
+                <h1>Reacciones</h1>
                 <br>
             </div>
         </div>
-
         <div class="row-acciones">
             <div class="col-auto">
                 <div class="boton">
                     <a href="{{route('reacciones.create')}}" class="btn btn-success"> Crear</a>
-                </div>
-                <div class="mx-auto">
-                    <a href="{{route('index')}}" class="btn btn-danger">Index Principal</a>
+                    <a href="{{route('index')}}" class="btn btn-danger">Regresar</a>
                 </div>
             </div>
         </div>
-
+        <br>
         <div class="row">
             <div class="col tarjetas">
                 <div class="container">
                     <div class="row">
                         @foreach($reacciones as $reaccion)
-
                             <div class="col-md-4 col-sm-6 mb-4">
                                 <div class="card h-100">
                                     <a href="{{route ('reacciones.show', $reaccion)}}">

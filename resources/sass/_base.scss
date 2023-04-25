@@ -1,9 +1,8 @@
-//Estilo Basico para todo
+//Estilo Basico global
 .tarjetas{
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-
     .tarjeta{
         border: 1px solid #717171;
         background: #b7b7b7;
@@ -17,13 +16,12 @@
         text-decoration: none;
         margin-bottom: 10px;
         margin-top: 10px;
-
         h2{
             margin-bottom: 0;
         }
-
     }
 }
+
 
 //Estilo para el index de publicaciones
 .publicacion {
@@ -79,7 +77,6 @@
     margin-bottom: 20px;
     overflow: hidden;
 }
-
 
 // Estilo Index para usuarios
 .usuario {
@@ -137,8 +134,8 @@
     overflow: hidden;
 }
 
-// scss para show de global
 
+// scss para show de global
 .card {
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -159,9 +156,6 @@
 .boton {
     display: inline-block;
 }
-
-/* Clases de Bootstrap */
-
 .row {
     margin: 0 -15px;
 }
@@ -195,3 +189,63 @@
     border-color: #dc3545;
     color: #fff;
 }
+
+.publicacion {
+    .card-img-top{
+        max-width: 50px;
+    }
+}
+
+.card {
+    .card-body {
+        h6 {
+            font-size: 1.25rem;
+            margin-left: 10px;
+            text-align: left;
+            margin-top: 20px;
+        }
+    }
+
+    .d-flex {
+        &.align-items-center {
+            margin-top: 20px;
+            img {
+                max-width: 50px;
+                margin-right: 10px;
+            }
+        }
+
+        &.flex-column {
+            .mt-3 {
+                margin-top: 20px;
+            }
+
+            .align-items-start {
+                margin-top: 10px;
+                img {
+                    max-width: 30px;
+                }
+            }
+        }
+    }
+
+    .rounded-circle {
+        border-radius: 50%;
+    }
+}
+
+.icono-reaccion{
+    width:30px;
+    height: 30px;
+}
+
+//body de imagen de background
+body{
+background-image:url("../ImagenesR/doge-logo.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: aliceblue;
+    background-size:50%;
+}
+

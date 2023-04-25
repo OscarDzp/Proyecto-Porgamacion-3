@@ -31,7 +31,6 @@ class UsuarioController extends Controller
     public function store(StoreusuarioRequest $request)
     {
 //        aqui se hacen las validaciones del formulario usuarios, preguntar si estas validaciones afectan sql
-
         $fields = $request->validate([
             'idUsuario' => 'required|numeric',
             'nombre' => 'required|string|max:50',
@@ -45,9 +44,8 @@ class UsuarioController extends Controller
             'cedula' => 'required|numeric',
             'biografia' => 'required|string',
         ]);
-
         Usuario :: create($fields);
-        return redirect()->route('usuarios.create')->with('success', 'Usuario'. $fields['nombre']. "ha sido creado exitosamente");
+        return redirect()->route('usuarios.create')->with('success', 'El Usuario '. $fields['nombre']. " ha sido creado exitosamente");
     }
 
     /**
@@ -86,7 +84,7 @@ class UsuarioController extends Controller
             'biografia' => 'required|string',
         ]);
         $usuario->update($fields);
-        return redirect()->route('usuarios.edit',$usuario)->with('success', 'El Usuario'. $fields['nombre']. "ha sido Editado exitosamente");
+        return redirect()->route('usuarios.edit',$usuario)->with('success', 'El Usuario '. $fields['nombre']. " ha sido Actualizado exitosamente");
     }
 
     /**
