@@ -32,8 +32,11 @@
           </div>
                 </div>
             <br>
+                @if(session('error'))
+                    <div class="alert alert-danger">{{ session('error')}}</div>
+                @endif
                 <div class="card" style="width: 20rem; margin: 0 auto;">
-                    <img src="{{$reaccion->icono}}" class="card-img-top"  " alt="...">
+                    <img src="{{$reaccion->icono}}" class="card-img-top"  alt="...">
                     <div class="card-body">
                         <h1 class="card-text">{{$reaccion->nombre}}</h1>
                     </div>

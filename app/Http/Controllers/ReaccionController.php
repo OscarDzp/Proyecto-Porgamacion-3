@@ -17,8 +17,6 @@ class ReaccionController extends Controller
     {
         $reacciones = Reaccion::with("publicaciones")->get();
         return view('reacciones.index',['reacciones' => $reacciones]);
-
-//        return reaccion::get();
     }
 
     /**
@@ -38,11 +36,8 @@ class ReaccionController extends Controller
         $fields = $request->validate([
             'nombre' => 'required|string',
             'icono' =>'nullable|string',
-//            'icono' =>'image|mimes:jpeg,png,jpg,webp|max:1024',
-        ]);
 
-//        $icono = $request->file('icono')->store('public/images');
-//        $fields['icono']=$icono;
+        ]);
 
         Reaccion::create($fields);
         return redirect()->route('reacciones.create')->with('success', 'La Reaccion ' . $fields['nombre'] . ' ha sido creado exitosamenete');
@@ -53,7 +48,6 @@ class ReaccionController extends Controller
      */
     public function show(Reaccion $reaccion)
     {
-//        $reaccion->icono = Storage::url($reaccion->icono);
         return view ('reacciones.show', ['reaccion' => $reaccion]);
     }
 
@@ -74,17 +68,6 @@ class ReaccionController extends Controller
             'nombre' => 'required|string',
             'icono' =>'nullable|string',
         ]);
-
-//        if($request->hasFile('imagen')) {
-//            Storage::delete($reaccion->icono);
-//            $icono = $request->file('icono')->store('public/image');
-//            $fields['icono'] = $icono;
-//        } else {
-//            $fields['imagen'] = $reaccion->imagen;
-//        }
-
-
-
         $reaccion->update($fields);
         return redirect()->route('reacciones.edit', $reaccion)->with('success', 'La Reaccion '. $fields['nombre'].  " ha sido Actualizada exitosamente");
 
@@ -95,7 +78,11 @@ class ReaccionController extends Controller
      */
     public function destroy(Reaccion $reaccion)
     {
-        $reaccion->delete();
-        return redirect()->route('reacciones.index');
+        try{
+            $reaccion->delete();
+            return redirect()->route('reacciones.index');
+        } catch (\Exception $e){
+            return  redirect()->back()->with('error', 'La Reaccion no se puede eliminar porque está siendo utilizado en una publicación.');
+        }
     }
 }

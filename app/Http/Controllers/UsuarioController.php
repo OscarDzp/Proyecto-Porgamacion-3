@@ -30,7 +30,6 @@ class UsuarioController extends Controller
      */
     public function store(StoreusuarioRequest $request)
     {
-//        aqui se hacen las validaciones del formulario usuarios, preguntar si estas validaciones afectan sql
         $fields = $request->validate([
             'idUsuario' => 'required|numeric',
             'nombre' => 'required|string|max:50',
@@ -44,7 +43,7 @@ class UsuarioController extends Controller
             'cedula' => 'required|numeric',
             'biografia' => 'required|string',
         ]);
-        Usuario :: create($fields);
+        Usuario::create($fields);
         return redirect()->route('usuarios.create')->with('success', 'El Usuario '. $fields['nombre']. " ha sido creado exitosamente");
     }
 
@@ -92,7 +91,12 @@ class UsuarioController extends Controller
      */
     public function destroy(usuario $usuario)
     {
-        $usuario->delete();
-        return redirect()->route('usuarios.index');
+        try {
+            $usuario->delete();
+            return redirect()->route('usuarios.index');
+        } catch (\Exception $e){
+            return  redirect()->back()->with('error', 'Este Usuario no se puede eliminar porque está siendo utilizado en una publicación.');
+        }
+
     }
 }

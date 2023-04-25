@@ -34,7 +34,6 @@
                                     <div class="card-body">
                                         <h4 class="card-title">{{$reaccion->nombre}}</h4>
                                     </div>
-
                                 </div>
                             </div>
                         @endforeach

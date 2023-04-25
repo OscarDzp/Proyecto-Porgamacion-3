@@ -4,7 +4,6 @@
 @section('title', 'Editar perfil')
 
 
-
 @section('content')
 
     <div class="container">

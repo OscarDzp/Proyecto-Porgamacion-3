@@ -4,7 +4,6 @@
 @section('title', 'Usuario')
 
 
-
 @section('content')
     <div class="container">
         <div class="row-titulo">
@@ -21,7 +20,7 @@
                 </div>
             </div>
         </div>
-<div><br></div>
+        <div><br></div>
         <div class="row">
             @foreach($usuarios as $usuario)
             <div class="col-md-6 col-lg-4">
@@ -33,8 +32,7 @@
                                         <h2 class="usuario-descripcion">{{$usuario->apellido}}</h2>
                                         <p class="usuario-descripcion">{{$usuario->genero}}</p>
                                     </div>
-                                </a>
-                        <br>
+                            </a>
                   </div>
             </div>
             @endforeach

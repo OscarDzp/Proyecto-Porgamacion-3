@@ -10,7 +10,7 @@
             </div>
         </div>
         <form class="row" action="{{route('reacciones.store')}}" method="POST">
-    @csrf
+            @csrf
             @include('reacciones.form')
             @if($errors->any())
                 <ul class="list-disc">
@@ -24,5 +24,5 @@
                     {{ session()->get('success')}}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
                 </div>
-    @endif
+             @endif
 @endsection

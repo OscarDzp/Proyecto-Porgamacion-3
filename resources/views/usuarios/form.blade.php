@@ -5,12 +5,14 @@
 
 <div class="col col-12 mt-3">
     <label for="nombre">Nombre</label>
-    <input   required value="{{ old('nombre', $usuario->nombre) }}"t ype="text" name="nombre" class="form-control">
+    <input   required value="{{ old('nombre', $usuario->nombre) }}" type="text" name="nombre" class="form-control" maxlength="50">
+    <small>Maximo de letras 50</small>
 </div>
 
 <div class="col col-12 mt-3">
     <label for="apellido">Apellido</label>
-    <input   required value="{{ old('apellido', $usuario->apellido) }}" type="text" name="apellido" class="form-control">
+    <input   required value="{{ old('apellido', $usuario->apellido) }}" type="text" name="apellido" class="form-control" maxlength="50">
+    <small>Maximo de letras 50</small>
 </div>
 
 <div class="col col-12 mt-3">
@@ -20,12 +22,14 @@
 
 <div class="col col-12 mt-3">
     <label for="puesto">Puesto</label>
-    <input  required value="{{ old('puesto', $usuario->puesto) }}" type="text" name="puesto" class="form-control">
+    <input  required value="{{ old('puesto', $usuario->puesto) }}" type="text" name="puesto" class="form-control" maxlength="80">
+    <small>Maximo de letras 80</small>
 </div>
 
 <div class="col col-12 mt-3">
     <label for="correo">Correo electrónico</label>
-    <input  required value="{{ old('correo', $usuario->correo) }}" type="text" name="correo" class="form-control">
+    <input  required value="{{ old('correo', $usuario->correo) }}" type="text" name="correo" class="form-control" maxlength="50">
+    <small>Maximo de letras 50</small>
 </div>
 
 <div class="col col-12 mt-3">
@@ -35,7 +39,8 @@
 
 <div class="col col-12 mt-3">
     <label for="genero">Género</label>
-    <input required value="{{ old('genero', $usuario->genero) }}" type="text" name="genero" class="form-control">
+    <input required value="{{ old('genero', $usuario->genero) }}" type="text" name="genero" class="form-control" maxlength="10">
+    <small>Maximo de letras 10</small>
 </div>
 
 <div class="col col-12 mt-3">
@@ -55,7 +60,7 @@
 
 <div class="col col-12 mt-3 acciones">
     <div class="boton">
-        <input type="submit" class="btn btn-success" value="Enviar">
+        <input type="submit" class="btn btn-success" value="Guardar">
     </div>
     <div class="boton">
         <a href="{{route('usuarios.index')}}" class="btn btn-danger"> Regresar</a>

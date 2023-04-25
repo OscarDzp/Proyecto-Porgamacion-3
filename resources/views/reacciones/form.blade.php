@@ -8,7 +8,7 @@
 </div>
 <div class="col col-12 mt-3 acciones">
     <div class="boton">
-        <input type="submit" class="btn btn-success" value="Crear">
+        <input type="submit" class="btn btn-success" value="Guardar">
     </div>
     <div class="boton">
         <a href="{{route('reacciones.index')}}" class="btn btn-primary">Regresar</a>

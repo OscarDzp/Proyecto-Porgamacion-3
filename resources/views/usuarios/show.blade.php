@@ -1,7 +1,7 @@
 @extends('layout')
 
 
-@section('title', 'Perfil')
+@section('title', 'Perfil de usuario')
 
 
 @section('content')
@@ -31,6 +31,9 @@
                     </div>
                 </div>
                 <br>
+                @if(session('error'))
+                    <div class="alert alert-danger">{{ session('error')}}</div>
+                @endif
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card">
@@ -70,6 +73,5 @@
                 </div>
             </div>
         </div>
-
 
 @endsection

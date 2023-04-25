@@ -1,8 +1,7 @@
 @extends('layout')
 
 
-@section('title', ' Show publicacion')
-
+@section('title', ' Show Publicacion')
 
 
 @section('content')
@@ -56,6 +55,6 @@
                 </div>
             </div>
         </div>
-
     </div>
+
 @endsection

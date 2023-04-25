@@ -1,7 +1,7 @@
 @extends('layout')
 
 
-@section('title', 'Crear')
+@section('title', 'Crear Publicación')
 
 
 
