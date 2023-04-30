@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('idUsuario');
             $table->string('nombre', 50 );
             $table->string('apellido', 50 );
-            $table->integer('cedula',);
+            $table->integer('cedula');
             $table->string('genero', 10 );
             $table->string('telefono');
             $table->string('correo', 50 ) -> unique();

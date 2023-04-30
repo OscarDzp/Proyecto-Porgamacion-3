@@ -67,9 +67,6 @@ use App\Http\Controllers\IndexController;
                 </div>
             </div>
         @endforeach
-        <div class="col-md-6"></div>
-        <!-- otra cosa -->
-        <div class="col-md-3"></div >
     </div>
 </div>
 </body>
